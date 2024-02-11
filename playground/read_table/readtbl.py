@@ -9,6 +9,8 @@ def read_excel_table(file_name):
         print("Error reading Excel file:", e)
         return None
 
+
+
 def main():
     file_name = 'temp.xlsx'
     
@@ -18,6 +20,7 @@ def main():
 
     table = read_excel_table(file_name)
     if table is not None:
+        table.insert(0, 'No', range(1, len(table) + 1))
         print(table.to_string(index=False))  # Print all attributes without index
 
 if __name__ == "__main__":
