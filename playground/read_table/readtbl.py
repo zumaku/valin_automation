@@ -11,10 +11,12 @@ def read_excel_table(file_name):
 
 def display_table(df):
     if df is not None:
-        df.insert(0, 'No', range(1, len(df) + 1)) # Numbering to the rows
+        if 'No' not in df.columns:  # Memeriksa apakah kolom 'No' sudah ada
+            df.insert(0, 'No', range(1, len(df) + 1)) # Numbering to the rows
         print(df.to_string(index=False))  # Print all attributes without index
         print("Number of rows:", len(df))
         print("Number of columns:", len(df.columns))
+
 
 def edit_table(df, onu_sn, valins_id):
     try:
@@ -38,7 +40,7 @@ def main():
 
         # Minimal ada satu argumen yang diberikan
         if len(sys.argv) < 3:
-            print("Atlest give me 1 argument")
+            print("Atleast give me 1 argument")
             print("Usage: python readtbl.py -t all/-t nc/-t ac/-t edit -onu <ONU SN> -val <VALINS ID>")
             sys.exit(1)
 
@@ -65,6 +67,9 @@ def main():
                 print("VALINS ID: " + valins_id)
                 print("ONU SN: " + onu_sn)
                 display_table(edited_table)
+                
+                # Simpan perubahan ke dalam file Excel
+                edited_table.to_excel(file_name, index=False)
             else:
                 print("Error editing table.")
                 sys.exit(1)
