@@ -1,0 +1,45 @@
+# Posisi form input => X: 1475, Posisi Y: 1046
+# Posisi tombol kirim => X: 1898, Posisi Y: 1042
+# Posisi tombol Port tidak ada qrcode => X: 1444, Posisi Y: 989
+
+
+# /findontport untuk membuka sebuah proses baru
+
+
+
+
+"""
+# === FLOW ====
+1. Run Aplikasi
+
+2. Masukkan IP
+3. Masukkan Slot
+4. Masukkan Port
+
+5. (pilih lanjut atau tidak, tergantung dari rechecknya berhasil)(Click recal secara manual)
+
+# Jika recheck berhasil
+6. Masukkan ODP
+7. Masukkan jumlah port
+8. Masukkan port yang tersedia
+9.  (otomatis send ODC)
+10. (otomatis send ODP) 
+11. (otomatis pilih panel)
+12. (otomatis pilih jumlah port)
+13. (otomatis share lokasi)
+14. (otomatis pilih selesai di ODP)
+
+15. (catat manual valins id)
+
+16. Masukkan qrcode
+17. (otomatis skip dan isi qrcode)
+
+18. (hentikan manual)
+
+"""
+
+
+
+
+
+
