@@ -2,6 +2,26 @@ import pandas as pd
 import sys
 from datetime import datetime
 
+excel_file = 'temp.xlsx'
+greating = '''
+Program ini akan mempermudah untuk melakukan kerjaan akuntan selama magang!
+
+‼️ PROGRAM INI HANYA UNTUK MAHASISWA MAGANG DI TELKOM BALAIKOTA ‼️
+Februari2024
+
+---------------------------------------------------------------------------
+
+Perintah yang Tersedia
+1. Tampilkan Semua Tabel: `python readtbl.py -t all`
+
+2. Tampilkan Tabel dengan Kolom 'VALINS ID' Kosong: `python readtbl.py -t nc`
+
+3. Tampilkan Tabel dengan Kolom 'VALINS ID' Terisi: `python readtbl.py -t ac`
+
+4. Edit Tabel: `python readtbl.py -t edit -onu <ONU SN> -val <VALINS ID>`
+    - Mengedit tabel dengan mengubah nilai kolom 'VALINS ID' berdasarkan nomor serial ONU (ONU SN) yang diberikan.
+'''
+
 def read_excel_table(file_name):
     try:
         df = pd.read_excel(file_name)
@@ -31,17 +51,15 @@ def edit_table(df, onu_sn, valins_id):
         return None
 
 def main():
-    file_name = 'temp.xlsx'
     
     if len(sys.argv) == 1:  # No arguments provided
-        print("Usage: python readtbl.py -t all/-t nc/-t ac/-t edit -onu <ONU SN> -val <VALINS ID>")
+        # print("Usage: python readtbl.py -t all/-t nc/-t ac/-t edit -onu <ONU SN> -val <VALINS ID>")
+        print(greating)
         sys.exit(1)
     
-    table = read_excel_table(file_name)
+    table = read_excel_table(excel_file)
 
     if sys.argv[1] == '-t':
-        print(sys.argv)
-
         # Minimal ada satu argumen yang diberikan
         if len(sys.argv) < 3:
             print("Atleast give me 1 argument")
@@ -73,7 +91,7 @@ def main():
                 display_table(edited_table)
                 
                 # Simpan perubahan ke dalam file Excel
-                edited_table.to_excel(file_name, index=False)
+                edited_table.to_excel(excel_file, index=False)
             else:
                 print("Error editing table.")
                 sys.exit(1)

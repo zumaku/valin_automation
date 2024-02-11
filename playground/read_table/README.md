@@ -21,6 +21,7 @@ pip install openpyxl pandas
 1. Sebelum menggunakan program ini, pastikan kamu sudah menyiapkan file excel ini dan pastikan juga sudah memiliki jatah data untuk dikerjakan.
 
 2. Copy data-data yang ada di Sheets sesuai dengan kolom yang disediakan di Excel.
+
 3. Pste ke Excel dan kamu siap beraksi. 
 
 ## Penggunaan
