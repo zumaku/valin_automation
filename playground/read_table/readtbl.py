@@ -1,5 +1,6 @@
 import pandas as pd
 import sys
+from datetime import datetime
 
 def read_excel_table(file_name):
     try:
@@ -17,9 +18,12 @@ def display_table(df):
         print("Number of rows:", len(df))
         print("Number of columns:", len(df.columns))
 
-
 def edit_table(df, onu_sn, valins_id):
     try:
+        now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        if 'First Updated' not in df.columns or df.loc[df['ONU SN'] == onu_sn, 'First Updated'].isnull().all():
+            df.loc[df['ONU SN'] == onu_sn, 'First Updated'] = now
+        df.loc[df['ONU SN'] == onu_sn, 'Last Updated'] = now
         df.loc[df['ONU SN'] == onu_sn, 'VALINS ID'] = valins_id
         return df
     except Exception as e:
