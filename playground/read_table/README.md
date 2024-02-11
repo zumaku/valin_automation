@@ -18,7 +18,7 @@ pip install openpyxl pandas
 ```
 
 ## Persiapan
-1. Sebelum menggunakan program ini, pastikan kamu sudah menyiapkan file excel ini dan pastikan juga sudah memiliki jatah data untuk dikerjakan.
+1. Sebelum menggunakan program ini, pastikan kamu sudah menyiapkan file excel [ini](temp.xlsx) dan pastikan juga sudah memiliki jatah data untuk dikerjakan.
 
 2. Copy data-data yang ada di Sheets sesuai dengan kolom yang disediakan di Excel.
 
@@ -32,13 +32,16 @@ Untuk menjalankan program, buka terminal di direktori tempat Anda menyimpan file
 1. **Tampilkan Semua Tabel**: `python readtbl.py -t all`
    - Menampilkan semua tabel yang ada dalam file Excel.
 
-2. **Tampilkan Tabel dengan Kolom 'VALINS ID' Kosong**: `python readtbl.py -t nc`
+2. **Tampilkan Semua Tabel Dengan Timestamp**: `python readtbl.py -t whole`
+   - Menampilkan semua tabel yang ada dalam file Excel beserta dengan atribut First Updated dan Last Updated.
+
+3. **Tampilkan Tabel dengan Kolom 'VALINS ID' Kosong**: `python readtbl.py -t nc`
    - Menampilkan tabel-tabel yang memiliki kolom 'VALINS ID' yang kosong atau tidak terisi.
 
-3. **Tampilkan Tabel dengan Kolom 'VALINS ID' Terisi**: `python readtbl.py -t ac`
+4. **Tampilkan Tabel dengan Kolom 'VALINS ID' Terisi**: `python readtbl.py -t ac`
    - Menampilkan tabel-tabel yang memiliki kolom 'VALINS ID' yang sudah terisi.
 
-4. **Edit Tabel**: `python readtbl.py -t edit -onu <ONU SN> -val <VALINS ID>`
+5. **Edit Tabel**: `python readtbl.py -t edit -onu <ONU SN> -val <VALINS ID>`
    - Mengedit tabel dengan menambahkan atau mengubah nilai kolom 'VALINS ID' berdasarkan nomor serial ONU (ONU SN) yang diberikan.
 
 ### Contoh Penggunaan
