@@ -16,18 +16,30 @@ def display_table(df):
         print("Number of rows:", len(df))
         print("Number of columns:", len(df.columns))
 
+def edit_table(df, onu_sn, valins_id):
+    try:
+        df.loc[df['ONU SN'] == onu_sn, 'VALINS ID'] = valins_id
+        return df
+    except Exception as e:
+        print("Error editing table:", e)
+        return None
+
 def main():
     file_name = 'temp.xlsx'
     
     if len(sys.argv) == 1:  # No arguments provided
-        print("Usage: python readtbl.py -t all/-t nc/-t ac")
+        print("Usage: python readtbl.py -t all/-t nc/-t ac/-t edit -onu <ONU SN> -val <VALINS ID>")
         sys.exit(1)
     
     table = read_excel_table(file_name)
 
     if sys.argv[1] == '-t':
-        if len(sys.argv) != 3:
-            print("Usage: python readtbl.py -t all/-t nc/-t ac")
+        print(sys.argv)
+
+        # Minimal ada satu argumen yang diberikan
+        if len(sys.argv) < 3:
+            print("Atlest give me 1 argument")
+            print("Usage: python readtbl.py -t all/-t nc/-t ac/-t edit -onu <ONU SN> -val <VALINS ID>")
             sys.exit(1)
 
         if sys.argv[2] == 'all':
@@ -41,11 +53,26 @@ def main():
             print("Displaying tables with 'VALINS ID' attribute not empty:")
             ac_table = table.dropna(subset=['VALINS ID'])
             display_table(ac_table)
+        elif sys.argv[2] == 'edit':
+            if len(sys.argv) != 7 or sys.argv[3] != '-onu' or sys.argv[5] != '-val':
+                print("Usage: python readtbl.py -t edit -onu <ONU SN> -val <VALINS ID>")
+                sys.exit(1)
+            onu_sn = sys.argv[4]
+            valins_id = sys.argv[6]
+            edited_table = edit_table(table, onu_sn, valins_id)
+            if edited_table is not None:
+                print("Table edited successfully:")
+                print("VALINS ID: " + valins_id)
+                print("ONU SN: " + onu_sn)
+                display_table(edited_table)
+            else:
+                print("Error editing table.")
+                sys.exit(1)
         else:
-            print("Usage: python readtbl.py -t all/-t nc/-t ac")
+            print("Usage: python readtbl.py -t all/-t nc/-t ac/-t edit -onu <ONU SN> -val <VALINS ID>")
             sys.exit(1)
     else:
-        print("Usage: python readtbl.py -t all/-t nc/-t ac")
+        print("Usage: python readtbl.py -t all/-t nc/-t ac/-t edit -onu <ONU SN> -val <VALINS ID>")
         sys.exit(1)
 
 if __name__ == "__main__":
