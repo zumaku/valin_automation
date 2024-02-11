@@ -1,0 +1,99 @@
+# === Inisialisasi paket ===
+print("Inisiasi valins_automation...")
+
+
+
+# === Import modul yang akan digunakan ===
+# Diisi nanti!
+
+
+# === Variable Global ===
+# Ini adalah semua posisi-posisi tombol dan form pada aplikasi Lensa Chetbot
+
+# => Form Position <=
+form_px = 1475
+form_py = 1046
+
+
+# => Send Button Position <=
+send_btn_px = 1898
+send_btn_py = 1042
+
+
+# => Recheck Button Position <=
+recheck_btn_px = 1392
+recheck_btn_py = 986
+
+
+# => Panel Button Position <=
+panel1_btn_px = 1403
+panel1_btn_py = 937
+
+panel2_btn_px = 1398
+panel2_btn_py = 983
+
+
+# => Jumlah port Button Position <=
+jml_port4_btn_px = 1385
+jml_port4_btn_py = 936
+
+jml_port8_btn_px = 1429
+jml_port8_btn_py = 940
+
+jml_port12_btn_px = 1491
+jml_port12_btn_py = 935
+
+jml_port16_btn_px = 1534
+jml_port16_btn_py = 941
+
+
+# => Shareloc Button postion <=
+shareloc_btn_px = 1453
+shareloc_btn_py = 983
+
+send_shareloc_btn_px = 1857
+send_shareloc_btn_py = 467
+
+
+# => Ready Port Button Position <=
+rp1_btn_px = 1385
+rp1_btn_py = 883
+
+rp2_btn_px = 1432
+rp2_btn_py = 890
+
+rp3_btn_px = 1480
+rp3_btn_py = 891
+
+rp4_btn_px = 1528
+rp4_btn_py = 888
+
+rp5_btn_px = 1389
+rp5_btn_py = 937
+
+rp6_btn_px = 1438
+rp6_btn_py = 942
+
+rp7_btn_px = 1484
+rp7_btn_py = 938
+
+rp8_btn_px = 1533
+rp8_btn_py = 940
+
+# Lanjutkan nanti untuk ready port 9-16, jika diperlukan!
+
+
+
+# => Selesai di ODP Button Position <=
+sdodp_btn_px = 1455
+sdodp_btn_py = 939
+
+
+# => QR Code Dropcore Button Position <=
+qrcd_btn_px = 1471
+qrcd_btn_py = 893
+
+
+# => Tidak ada dropcode Button Position <=
+nnd_btn_px = 1477
+nnd_btn_py = 983
