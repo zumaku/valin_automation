@@ -8,8 +8,19 @@ print("Inisiasi valins_automation...")
 
 
 # === Variable Global ===
-# Ini adalah semua posisi-posisi tombol dan form pada aplikasi Lensa Chetbot
+excel_file = 'temp.xlsx'
+greating = '''
+Program ini akan mempermudah untuk melakukan kerjaan akuntan selama magang!
 
+‼️ PROGRAM INI HANYA UNTUK MAHASISWA MAGANG DI TELKOM BALAIKOTA ‼️
+Februari2024
+
+---------------------------------------------------------------------------
+
+Perintah yang Tersedia
+'''
+
+# Ini adalah semua posisi-posisi tombol dan form pada aplikasi Lensa Chetbot
 # => Form Position <=
 form_px = 1475
 form_py = 1046
@@ -97,3 +108,10 @@ qrcd_btn_py = 893
 # => Tidak ada dropcode Button Position <=
 nnd_btn_px = 1477
 nnd_btn_py = 983
+
+
+# Mengekspor simbol-simbol (opsional)
+# __all__ = [
+#     'excel_file',
+#     'greating',
+# ]
