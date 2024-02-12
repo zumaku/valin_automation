@@ -1,3 +1,5 @@
+import pyperclip
+
 # === Inisialisasi paket ===
 print("Inisiasi valins_automation...")
 
@@ -108,6 +110,14 @@ qrcd_btn_py = 893
 # => Tidak ada dropcode Button Position <=
 nnd_btn_px = 1477
 nnd_btn_py = 983
+
+
+def copy_to_clipboard(text):
+    try:
+        pyperclip.copy(text)
+        return True
+    except:
+        return False
 
 
 # Mengekspor simbol-simbol (opsional)

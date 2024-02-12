@@ -11,7 +11,7 @@ table = tbl.read_excel_table(var.excel_file)
 def main():
     if len(sys.argv) == 1:  # No arguments provided
             print(var.greating)
-            sys.exit(1)
+            sys.exit()
     
     if sys.argv[1] == '-t':
         print("Argumen -t")
@@ -46,11 +46,6 @@ def main():
                 else:
                     print("Error editing table.")
                     sys.exit(1)
-            
-            # === Testing Get Data | On Going ===
-            elif sys.argv[2] == '-get':
-                print(tbl.get_data(var.excel_file, "NODE ID", 2))
-            
             else:
                 print("Usage: python readtbl.py -t all/-t nc/-t ac/-t edit -onu <ONU SN> -val <VALINS ID>")
                 sys.exit(1)
@@ -59,7 +54,28 @@ def main():
             tbl.display_table(table)
     
     elif sys.argv[1] == '-f':
-        print("Argumen -f")
+        if len(sys.argv) < 2:
+            print("Masukkan argumen untuk row, contoh -f 2")
+        else:
+            # Mengambil data
+            row = int(sys.argv[2])
+            node_id = tbl.get_data(var.excel_file, "NODE ID", row)
+            slot = tbl.get_data(var.excel_file, "SLOT", row)
+            port = tbl.get_data(var.excel_file, "PORT", row)
+            
+            print("NODE ID: {} | SLOT: {} | PORT: {}".format(node_id, slot, port))
+            if input("Lanjut? y/n : ") == "y":
+                flw.flow_pt1(node_id, slot, port)
+
+                # Mengcopy ONU SN
+                onu_sn = tbl.get_data(var.excel_file, "ONU SN", row)
+                var.copy_to_clipboard(onu_sn)
+                print("✓ ONU SN tercopy!")
+
+            else:
+                sys.exit()
+
+            
         
         
 

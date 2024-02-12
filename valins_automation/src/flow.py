@@ -28,3 +28,35 @@ def chngodp(odp):
     odp = odp[:2] + "C" + odp[3:]
     
     return odp
+
+
+def flow_pt1(node_id, slot, port):
+    print("================ Flow Part 1, Dimulai! ================")
+
+    # Mengirimkan perintah /findontport
+    print("-> Mengirim '/findontport'")
+    typensend("/findontport")
+    print("   ✓ '/findontport' terkirim")
+    time.sleep(4)
+
+    # Mengirimkan Node ID
+    print("-> Mengirim Node ID")
+    typensend(node_id)
+    print("   ✓ Node ID terkirim")
+    time.sleep(4)
+
+
+    # Mengirimkan slot
+    print("-> Mengirim Slot")
+    typensend(str(slot))
+    print("   ✓ Slot terkirim")
+    time.sleep(4)
+
+    # Mengirimkan port
+    print("-> Mengirim Port")
+    typensend(str(port))
+    print("   ✓ Port terkirim")
+    time.sleep(4)
+
+    print("================ Flow Part 1, Selesai! ================")
+    print("Silahkan Recheck dan bersiap untuk flow kedua")
