@@ -8,7 +8,7 @@ print("Inisiasi valins_automation...")
 
 
 # === Variable Global ===
-excel_file = 'temp.xlsx'
+excel_file = '../docs/temp.xlsx'
 greating = '''
 Program ini akan mempermudah untuk melakukan kerjaan akuntan selama magang!
 
