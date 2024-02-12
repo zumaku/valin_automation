@@ -65,15 +65,38 @@ def main():
             
             print("NODE ID: {} | SLOT: {} | PORT: {}".format(node_id, slot, port))
             if input("Lanjut? y/n : ") == "y":
+                # Menjalankan flow 1
                 flw.flow_pt1(node_id, slot, port)
 
                 # Mengcopy ONU SN
                 onu_sn = tbl.get_data(var.excel_file, "ONU SN", row)
                 var.copy_to_clipboard(onu_sn)
                 print("✓ ONU SN tercopy!")
-
             else:
                 sys.exit()
+    
+    elif sys.argv[1] == '-f2':
+        if len(sys.argv) < 2:
+            print("Masukkan argumen untuk row, contoh -f2 2")
+        else:
+            # Mengambil data
+            row = int(sys.argv[2])
+
+            # === Tambahkan pengecekan untuk isi databta!!! ===
+            odp = tbl.get_data(var.excel_file, "ODP", row)
+            jmlport = tbl.get_data(var.excel_file, "Max Port", row)
+            readyport = tbl.get_data(var.excel_file, "Ready Port", row)
+
+            print("ODP: {} | Jumlah Port: {} | Ready Port: {}".format(odp, jmlport, readyport))
+            if input("Lanjut? y/n : ") == "y":
+                # Menjalankan flow 1
+                flw.flow_pt2(odp, jmlport, readyport)
+            else:
+                sys.exit()
+
+
+
+
 
             
         

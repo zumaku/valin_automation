@@ -69,29 +69,29 @@ send_shareloc_btn_py = 467
 
 
 # => Ready Port Button Position <=
-rp1_btn_px = 1385
-rp1_btn_py = 883
+rp1_btn_px = 1370
+rp1_btn_py = 892
 
-rp2_btn_px = 1432
-rp2_btn_py = 890
+rp2_btn_px = 1425
+rp2_btn_py = 888
 
-rp3_btn_px = 1480
-rp3_btn_py = 891
+rp3_btn_px = 1475
+rp3_btn_py = 888
 
-rp4_btn_px = 1528
+rp4_btn_px = 1525
 rp4_btn_py = 888
 
-rp5_btn_px = 1389
+rp5_btn_px = 1372
 rp5_btn_py = 937
 
-rp6_btn_px = 1438
-rp6_btn_py = 942
+rp6_btn_px = 1429
+rp6_btn_py = 937
 
-rp7_btn_px = 1484
-rp7_btn_py = 938
+rp7_btn_px = 1475
+rp7_btn_py = 937
 
-rp8_btn_px = 1533
-rp8_btn_py = 940
+rp8_btn_px = 1531
+rp8_btn_py = 937
 
 # Lanjutkan nanti untuk ready port 9-16, jika diperlukan!
 
