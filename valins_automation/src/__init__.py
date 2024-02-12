@@ -68,30 +68,81 @@ send_shareloc_btn_px = 1857
 send_shareloc_btn_py = 467
 
 
-# => Ready Port Button Position <=
-rp1_btn_px = 1370
-rp1_btn_py = 892
+# => Ready Port Button Position | Panel 1 <=
+rp1_p1_btn_px = 1370
+rp1_p1_btn_py = 892
 
-rp2_btn_px = 1425
-rp2_btn_py = 888
+rp2_p1_btn_px = 1425
+rp2_p1_btn_py = 888
 
-rp3_btn_px = 1475
-rp3_btn_py = 888
+rp3_p1_btn_px = 1475
+rp3_p1_btn_py = 888
 
-rp4_btn_px = 1525
-rp4_btn_py = 888
+rp4_p1_btn_px = 1525
+rp4_p1_btn_py = 888
 
-rp5_btn_px = 1372
-rp5_btn_py = 937
+rp5_p1_btn_px = 1372
+rp5_p1_btn_py = 937
 
-rp6_btn_px = 1429
-rp6_btn_py = 937
+rp6_p1_btn_px = 1429
+rp6_p1_btn_py = 937
 
-rp7_btn_px = 1475
-rp7_btn_py = 937
+rp7_p1_btn_px = 1475
+rp7_p1_btn_py = 937
 
-rp8_btn_px = 1531
-rp8_btn_py = 937
+rp8_p1_btn_px = 1531
+rp8_p1_btn_py = 937
+
+
+# => Ready Port Button Position | Panel 2 <=
+rp1_p2_btn_px = 1369
+rp1_p2_btn_py = 798
+
+rp2_p2_btn_px = 1422
+rp2_p2_btn_py = 798
+
+rp3_p2_btn_px = 1470
+rp3_p2_btn_py = 798
+
+rp4_p2_btn_px = 1517
+rp4_p2_btn_py = 798
+
+rp5_p2_btn_px = 1370
+rp5_p2_btn_py = 839
+
+rp6_p2_btn_px = 1422
+rp6_p2_btn_py = 839
+
+rp7_p2_btn_px = 1470
+rp7_p2_btn_py = 839
+
+rp8_p2_btn_px = 1517
+rp8_p2_btn_py = 839
+
+rp9_p2_btn_px = 1370
+rp9_p2_btn_py = 888
+
+rp10_p2_btn_px = 1422
+rp10_p2_btn_py = 888
+
+rp11_p2_btn_px = 1470
+rp11_p2_btn_py = 888
+
+rp12_p2_btn_px = 1517
+rp12_p2_btn_py = 888
+
+rp13_p2_btn_px = 1370
+rp13_p2_btn_py = 935
+
+rp14_p2_btn_px = 1422
+rp14_p2_btn_py = 935
+
+rp15_p2_btn_px = 1470
+rp15_p2_btn_py = 935
+
+rp16_p2_btn_px = 1517
+rp16_p2_btn_py = 935
+
 
 # Lanjutkan nanti untuk ready port 9-16, jika diperlukan!
 

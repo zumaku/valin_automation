@@ -115,28 +115,69 @@ def flow_pt2(odp, jmlport, readyport):
 
     # Memilih port yang tersedia
     print("-> Memilih Port yang tersedia")
-    if int(readyport) == 1:
-        clickat(var.rp1_btn_px, var.rp1_btn_py)
-    elif int(readyport) == 2:
-        clickat(var.rp2_btn_px, var.rp2_btn_py)
-    elif int(readyport) == 3:
-        clickat(var.rp3_btn_px, var.rp3_btn_py)
-    elif int(readyport) == 4:
-        clickat(var.rp4_btn_px, var.rp4_btn_py)
-    elif int(readyport) == 5:
-        clickat(var.rp5_btn_px, var.rp5_btn_py)
-    elif int(readyport) == 6:
-        clickat(var.rp6_btn_px, var.rp6_btn_py)
-    elif int(readyport) == 7:
-        clickat(var.rp7_btn_px, var.rp7_btn_py)
-    elif int(readyport) == 8:
-        clickat(var.rp8_btn_px, var.rp8_btn_py)
-    else:
-        print("Error on switch case ready port")
-        sys.exit(1)
-    time.sleep(4)
-    clickat(var.shareloc_btn_px, var.shareloc_btn_py)
+    if jmlport == 8:    # Jika Portnya 8
+        if int(readyport) == 1:
+            clickat(var.rp1_p1_btn_px, var.rp1_p1_btn_py)
+        elif int(readyport) == 2:
+            clickat(var.rp2_p1_btn_px, var.rp2_p1_btn_py)
+        elif int(readyport) == 3:
+            clickat(var.rp3_p1_btn_px, var.rp3_p1_btn_py)
+        elif int(readyport) == 4:
+            clickat(var.rp4_p1_btn_px, var.rp4_p1_btn_py)
+        elif int(readyport) == 5:
+            clickat(var.rp5_p1_btn_px, var.rp5_p1_btn_py)
+        elif int(readyport) == 6:
+            clickat(var.rp6_p1_btn_px, var.rp6_p1_btn_py)
+        elif int(readyport) == 7:
+            clickat(var.rp7_p1_btn_px, var.rp7_p1_btn_py)
+        elif int(readyport) == 8:
+            clickat(var.rp8_p1_btn_px, var.rp8_p1_btn_py)
+        else:
+            print("Error on switch case ready port")
+            sys.exit(1)
+    else:   # Jika Portnya 16
+        if int(readyport) == 1:
+            clickat(var.rp1_p2_btn_px, var.rp1_p2_btn_py)
+        elif int(readyport) == 2:
+            clickat(var.rp2_p2_btn_px, var.rp2_p2_btn_py)
+        elif int(readyport) == 3:
+            clickat(var.rp3_p2_btn_px, var.rp3_p2_btn_py)
+        elif int(readyport) == 4:
+            clickat(var.rp4_p2_btn_px, var.rp4_p2_btn_py)
+        elif int(readyport) == 5:
+            clickat(var.rp5_p2_btn_px, var.rp5_p2_btn_py)
+        elif int(readyport) == 6:
+            clickat(var.rp6_p2_btn_px, var.rp6_p2_btn_py)
+        elif int(readyport) == 7:
+            clickat(var.rp7_p2_btn_px, var.rp7_p2_btn_py)
+        elif int(readyport) == 8:
+            clickat(var.rp8_p2_btn_px, var.rp8_p2_btn_py)
+        elif int(readyport) == 9:
+            clickat(var.rp9_p2_btn_px, var.rp9_p2_btn_py)
+        elif int(readyport) == 10:
+            clickat(var.rp10_p2_btn_px, var.rp10_p2_btn_py)
+        elif int(readyport) == 11:
+            clickat(var.rp11_p2_btn_px, var.rp11_p2_btn_py)
+        elif int(readyport) == 12:
+            clickat(var.rp12_p2_btn_px, var.rp12_p2_btn_py)
+        elif int(readyport) == 13:
+            clickat(var.rp13_p2_btn_px, var.rp13_p2_btn_py)
+        elif int(readyport) == 14:
+            clickat(var.rp14_p2_btn_px, var.rp14_p2_btn_py)
+        elif int(readyport) == 15:
+            clickat(var.rp15_p2_btn_px, var.rp15_p2_btn_py)
+        elif int(readyport) == 16:
+            clickat(var.rp16_p2_btn_px, var.rp16_p2_btn_py)
+        else:
+            print("Error on switch case ready port")
+            sys.exit(1)
     print("   ✓ Port yang tersedia terpilih")
+    time.sleep(4)
+
+    # Mengirim lokasi
+    print("-> Mengirim Lokasi")
+    clickat(var.shareloc_btn_px, var.shareloc_btn_py)
+    print("-> Lokasi Terkirim")
     time.sleep(4)
     
     # Memilih Selesai di ODP
