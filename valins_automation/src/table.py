@@ -10,11 +10,11 @@ def read_excel_table(file_name):
         print("Error reading Excel file:", e)
         return None
 
-def display_table(df, whole=False):
+def display_table(df, all=False):
     if df is not None:
         if 'No' not in df.columns:  # Memeriksa apakah kolom 'No' sudah ada
             df.insert(0, 'No', range(1, len(df) + 1)) # Numbering to the rows
-        if whole:
+        if all:
             print(df.to_string(index=False))  # Print all attributes without index
         else:
             # Membuat salinan DataFrame yang hanya berisi kolom yang tidak ingin ditampilkan
