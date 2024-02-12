@@ -46,6 +46,11 @@ def main():
                 else:
                     print("Error editing table.")
                     sys.exit(1)
+            
+            # === Testing Get Data | On Going ===
+            elif sys.argv[2] == '-get':
+                print(tbl.get_data(var.excel_file, "NODE ID", 2))
+            
             else:
                 print("Usage: python readtbl.py -t all/-t nc/-t ac/-t edit -onu <ONU SN> -val <VALINS ID>")
                 sys.exit(1)

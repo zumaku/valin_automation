@@ -34,3 +34,16 @@ def edit_table(df, onu_sn, valins_id):
     except Exception as e:
         print("Error editing table:", e)
         return None
+    
+def get_data(excel_file, colm, row):
+    try:
+        # Baca file Excel menjadi DataFrame
+        df = pd.read_excel(excel_file)
+        
+        # Ambil data berdasarkan kolom (colm) dan baris (row) yang diberikan
+        data = df.loc[row - 1, colm]
+        
+        return data
+    except Exception as e:
+        print("Error:", e)
+        return None
