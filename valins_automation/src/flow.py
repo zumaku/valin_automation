@@ -62,10 +62,6 @@ def flow_pt1(node_id, slot, port):
     print("Silahkan Recheck dan bersiap untuk flow kedua")
 
 
-
-
-
-
 def flow_pt2(odp, jmlport, readyport):
     print("======= Flow Part 2, Dimulai! =======")
 
@@ -109,7 +105,7 @@ def flow_pt2(odp, jmlport, readyport):
     clickat(var.shareloc_btn_px, var.shareloc_btn_py)
     time.sleep(4)
     clickat(var.send_shareloc_btn_px, var.send_shareloc_btn_py)
-    time.sleep(4)
+    time.sleep(3)
     print("   ✓ Lokasi Terkirim")
     time.sleep(4)
 
@@ -172,13 +168,7 @@ def flow_pt2(odp, jmlport, readyport):
             print("Error on switch case ready port")
             sys.exit(1)
     print("   ✓ Port yang tersedia terpilih")
-    time.sleep(4)
-
-    # Mengirim lokasi
-    print("-> Mengirim Lokasi")
-    clickat(var.shareloc_btn_px, var.shareloc_btn_py)
-    print("-> Lokasi Terkirim")
-    time.sleep(4)
+    time.sleep(6)
     
     # Memilih Selesai di ODP
     print("-> Memilih Selesai di ODP")
@@ -189,8 +179,6 @@ def flow_pt2(odp, jmlport, readyport):
 
     print("================ Flow Part 2, Selesai! ================")
     print("Silahkan simpan Valins ID")
-
-
 
 
 def flow_pt3(jmlport, qrcode, readyport):

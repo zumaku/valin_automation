@@ -23,13 +23,13 @@ def display_table(df, all=False):
         print("Number of rows:", len(df))
         print("Number of columns:", len(df.columns))
 
-def edit_table(df, onu_sn, valins_id):
+def edit_table(df, row, valins_id):
     try:
         now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        if 'First Updated' not in df.columns or df.loc[df['ONU SN'] == onu_sn, 'First Updated'].isnull().all():
-            df.loc[df['ONU SN'] == onu_sn, 'First Updated'] = now
-        df.loc[df['ONU SN'] == onu_sn, 'Last Updated'] = now
-        df.loc[df['ONU SN'] == onu_sn, 'VALINS ID'] = valins_id
+        if 'First Updated' not in df.columns or df.loc[df['No'] == row, 'First Updated'].isnull().all():
+            df.loc[df['No'] == row, 'First Updated'] = now
+        df.loc[df['No'] == row, 'Last Updated'] = now
+        df.loc[df['No'] == row, 'VALINS ID'] = valins_id
         return df
     except Exception as e:
         print("Error editing table:", e)

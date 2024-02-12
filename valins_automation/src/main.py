@@ -29,16 +29,16 @@ def main():
                 ac_table = table.dropna(subset=['VALINS ID'])
                 tbl.display_table(ac_table)
             elif sys.argv[2] == 'edit':
-                if len(sys.argv) != 7 or sys.argv[3] != '-onu' or sys.argv[5] != '-val':
+                if len(sys.argv) != 7 or sys.argv[3] != '-r' or sys.argv[5] != '-val':
                     print("Usage: python readtbl.py -t edit -onu <ONU SN> -val <VALINS ID>")
                     sys.exit(1)
-                onu_sn = sys.argv[4]
+                row = sys.argv[4]
                 valins_id = sys.argv[6]
-                edited_table = tbl.edit_table(table, onu_sn, valins_id)
+                edited_table = tbl.edit_table(table, int(row), valins_id)
                 if edited_table is not None:
                     print("Table edited successfully:")
                     print("VALINS ID: " + valins_id)
-                    print("ONU SN: " + onu_sn)
+                    print("ROW: " + row)
                     tbl.display_table(edited_table)
                     
                     # Simpan perubahan ke dalam file Excel
@@ -103,7 +103,7 @@ def main():
             readyport = tbl.get_data(var.excel_file, "Ready Port", row)
             qrcode = sys.argv[4]
 
-            print("Ready Port: {} | QR CODE: {} | Ready Port: {}".format(jmlport, qrcode, readyport))
+            print("Jumlah Port: {} | QR CODE: {} | Ready Port: {}".format(jmlport, qrcode, readyport))
             if input("Lanjut? y/n : ") == "y":
                 # Menjalankan flow 3
                 flw.flow_pt3(jmlport, qrcode, readyport)
