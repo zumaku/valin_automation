@@ -148,3 +148,32 @@ def flow_pt2(odp, jmlport, readyport):
 
     print("================ Flow Part 2, Selesai! ================")
     print("Silahkan simpan Valins ID")
+
+
+
+
+def flow_pt3(jmlport, qrcode, readyport):
+    print("================ Flow Part 2, Dimulai! ================")
+
+    print("-> Mengklik QR Code Dropcore")
+    clickat(var.qrcd_btn_px, var.qrcd_btn_py)
+    time.sleep(5)
+    print("   ✓ QR Code Dropcore terklik")
+
+    x = 1
+    while x <= jmlport:
+        if x == int(readyport):
+            print("-> Mengirim QR Code Dropcore")
+            typensend(qrcode)
+            print("   ✓ QR Code Dropcore Terkirim")
+            time.sleep(5)
+        else:
+            print("-> Memilih 'Tidak ada Dropcore'")
+            clickat(var.nnd_btn_px, var.nnd_btn_py)
+            time.sleep(5)
+            print("   ✓ 'Tidak ada Dropcore' Terpilih")
+        x+=1
+
+
+    print("================ Flow Part 3, Selesai! ================")
+    print("Hentikan manual sendiri")

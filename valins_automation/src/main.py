@@ -94,6 +94,22 @@ def main():
             else:
                 sys.exit()
 
+    elif sys.argv[1] == '-f3':
+        if len(sys.argv) < 4 and sys.argv[3] != "-qr":
+            print("Masukkan argumen untuk row, contoh -f3 2 -qr <qrcodeya>")
+        else:
+            row = int(sys.argv[2])
+            jmlport = tbl.get_data(var.excel_file, "Max Port", row)
+            readyport = tbl.get_data(var.excel_file, "Ready Port", row)
+            qrcode = sys.argv[4]
+
+            print("Ready Port: {} | QR CODE: {} | Ready Port: {}".format(jmlport, qrcode, readyport))
+            if input("Lanjut? y/n : ") == "y":
+                # Menjalankan flow 3
+                flw.flow_pt3(jmlport, qrcode, readyport)
+            else:
+                sys.exit()
+
 
 
 
