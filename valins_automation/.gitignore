@@ -1,0 +1,5 @@
+# Ignore all files in the 'doc' directory
+docs/*
+
+# Except the example.xlsx file
+!docs/temp-change_to_xlsx.txt
