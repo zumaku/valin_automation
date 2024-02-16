@@ -2,4 +2,6 @@
 docs/*
 
 # Except the example.xlsx file
-!docs/temp-change_to_xlsx.txt
+!docs/temp.xlsx
+
+todo.txt
