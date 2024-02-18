@@ -17,7 +17,7 @@ def main():
     if sys.argv[1] == '-t':
         print("Argumen -t")
 
-        if len(sys.argv) > 2:
+        if len(sys.argv) == 3:
             if sys.argv[2] == 'all':
                 print("Displaying tables with all attributes:")
                 tbl.display_table(table, all=True)
@@ -29,27 +29,7 @@ def main():
                 print("Displaying tables with 'VALINS ID' attribute not empty:")
                 ac_table = table.dropna(subset=['VALINS ID'])
                 tbl.display_table(ac_table)
-            elif sys.argv[2] == 'edit':
-                if len(sys.argv) != 7 or sys.argv[3] != '-r' or sys.argv[5] != '-val':
-                    print("Usage: python readtbl.py -t edit -onu <ONU SN> -val <VALINS ID>")
-                    sys.exit(1)
-                row = sys.argv[4]
-                valins_id = sys.argv[6]
-                edited_table = tbl.edit_table(table, int(row), valins_id)
-                if edited_table is not None:
-                    print("Table edited successfully:")
-                    print("VALINS ID: " + valins_id)
-                    print("ROW: " + row)
-                    tbl.display_table(edited_table)
-                    
-                    # Simpan perubahan ke dalam file Excel
-                    edited_table.to_excel(var.excel_file, index=False)
-                else:
-                    print("Error editing table.")
-                    sys.exit(1)
-            else:
-                print("Usage: python readtbl.py -t all/-t nc/-t ac/-t edit -onu <ONU SN> -val <VALINS ID>")
-                sys.exit(1)
+
         else:
             print("Displaying all tables:")
             tbl.display_table(table)
@@ -96,6 +76,28 @@ def main():
         else:
             print("Argumen yang dimasukkan salah.")
             print("Gunakan -f2 <NO ROW>")
+
+    elif sys.argv[1] == '-edit':
+        if len(sys.argv) == 3:
+            
+            row = sys.argv[2]
+            valins_id = input("Isi Valin ID: ")
+            edited_table = tbl.edit_table(table, int(row), valins_id)
+            
+            if edited_table is not None:
+                print("Table edited successfully!")
+                print("VALINS ID: " + valins_id)
+                print("ROW: " + row)
+                tbl.display_table(edited_table)
+                
+                # Simpan perubahan ke dalam file Excel
+                edited_table.to_excel(var.excel_file, index=False)
+            else:
+                print("Error editing table.")
+                sys.exit(1)
+        else:
+            print("Argumen yang dimasukkan salah.")
+            print("Gunakan -edit <NO ROW>")
 
     elif sys.argv[1] == '-f3':
         if len(sys.argv) == 3:
