@@ -55,9 +55,7 @@ def main():
             tbl.display_table(table)
     
     elif sys.argv[1] == '-f':
-        if len(sys.argv) < 2:
-            print("Masukkan argumen untuk row, contoh -f 2")
-        else:
+        if len(sys.argv) == 3:
             # Mengambil data
             row = int(sys.argv[2])
             node_id = tbl.get_data(var.excel_file, "NODE ID", row)
@@ -75,12 +73,13 @@ def main():
                 print("✓ ONU SN tercopy!")
             else:
                 sys.exit()
+        else:
+            print("Argumen yang dimasukkan salah.")
+            print("Gunakan -f1 <NO ROW>")
     
     elif sys.argv[1] == '-f2':
-        if len(sys.argv) < 2:
-            print("Masukkan argumen untuk row, contoh -f2 2")
-        else:
-            # Mengambil data
+        if len(sys.argv) == 3:
+            # Mengambil number row
             row = int(sys.argv[2])
 
             # === Tambahkan pengecekan untuk isi databta!!! ===
@@ -94,6 +93,9 @@ def main():
                 flw.flow_pt2(odp, jmlport, readyport)
             else:
                 sys.exit()
+        else:
+            print("Argumen yang dimasukkan salah.")
+            print("Gunakan -f2 <NO ROW>")
 
     elif sys.argv[1] == '-f3':
         if len(sys.argv) == 3:
@@ -115,6 +117,7 @@ def main():
                 sys.exit()
         else:
             print("Argumen yang dimasukkan salah.")
+            print("Gunakan -f3 <NO ROW>")
 
 
     else:
