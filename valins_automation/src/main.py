@@ -10,8 +10,8 @@ table = tbl.read_excel_table(var.excel_file)
 
 def main():
     if len(sys.argv) == 1:  # No arguments provided
-            print(var.greating)
-            sys.exit()
+        print(var.desc)
+        sys.exit()
     
     if sys.argv[1] == '-t':
         print("Argumen -t")
@@ -110,6 +110,8 @@ def main():
             else:
                 sys.exit()
 
+    else:
+        print("Argumen '{}' tidak diketahui".format(sys.argv[1]))
 
 
 

@@ -18,6 +18,24 @@ __   ____ _| (_)_ __  ___    __ _ _   _| |_ ___  _ __ ___   __ _| |_(_) ___  _ _
  \ V / (_| | | | | | \__ \ | (_| | |_| | || (_) | | | | | | (_| | |_| | (_) | | | |
   \_/ \__,_|_|_|_| |_|___/  \__,_|\__,_|\__\___/|_| |_| |_|\__,_|\__|_|\___/|_| |_|                                                                                 
 '''
+desc = '''
+Ini adalah sebuah program yang dapat membantu Mahasiswa PPL/PKL/Magang di Telkom STO Balaikota Makassar yang melakukan validasi Valin menggunakan aplikasi Lensa.
+Program ini akan mengendalikan mouse dan keyboard secara semi otomatis berdasarkan posisi tombol-tombol aplikasi yang berjalan di emulator laptop.
+
+Perintah
+-t                              : Untuk menampilkan isi tabel
+-t nc                           : Untuk menampilkan isi tabel yang belum tervalidasi
+-t ac                           : Untuk menampilkan isi tabel yang telah tervalidasi
+-t edit                         : Untuk mengedit salah satu tabel yang akan divalidasi
+-t all                          : Untuk menampilkan semua isi tabel termasuk semua kolom
+
+-f <NO ROW>                     : Untuk menjalankan flow 1 pada Nomer data yang diinputkan
+-f2 <NO ROW>                    : Untuk menjalankan flow 2 pada Nomer data yang diinputkan
+-f3 <NO ROW> -qr <QRCODE>       : Untuk menjalankan flow 3 pada Nomer data yang diinputkan
+
+Program ini dibuat oleh Zumaku
+Semoga Membantu :)
+'''
 print(greating)
 
 # Ini adalah semua posisi-posisi tombol dan form pada aplikasi Lensa Chetbot
