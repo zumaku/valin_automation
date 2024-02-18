@@ -26,12 +26,13 @@ Perintah
 -t                              : Untuk menampilkan isi tabel
 -t nc                           : Untuk menampilkan isi tabel yang belum tervalidasi
 -t ac                           : Untuk menampilkan isi tabel yang telah tervalidasi
--t edit                         : Untuk mengedit salah satu tabel yang akan divalidasi
 -t all                          : Untuk menampilkan semua isi tabel termasuk semua kolom
+
+-edit <NO ROW>                  : Untuk mengedit kolom valin id pada  nomer data yang diinputkan
 
 -f <NO ROW>                     : Untuk menjalankan flow 1 pada Nomer data yang diinputkan
 -f2 <NO ROW>                    : Untuk menjalankan flow 2 pada Nomer data yang diinputkan
--f3 <NO ROW> -qr <QRCODE>       : Untuk menjalankan flow 3 pada Nomer data yang diinputkan
+-f3 <NO ROW>                    : Untuk menjalankan flow 3 pada Nomer data yang diinputkan
 
 Program ini dibuat oleh Zumaku
 Semoga Membantu :)

@@ -9,14 +9,13 @@ import flow as flw
 table = tbl.read_excel_table(var.excel_file)
 
 def main():
-    print(sys.argv)
+    # print(sys.argv)
+
     if len(sys.argv) == 1:
         print(var.desc)
         sys.exit()
     
     if sys.argv[1] == '-t':
-        print("Argumen -t")
-
         if len(sys.argv) == 3:
             if sys.argv[2] == 'all':
                 print("Displaying tables with all attributes:")
@@ -29,7 +28,9 @@ def main():
                 print("Displaying tables with 'VALINS ID' attribute not empty:")
                 ac_table = table.dropna(subset=['VALINS ID'])
                 tbl.display_table(ac_table)
-
+            else:
+                print("Argumen yang dimasukkan salah.")
+                sys.exit(1)
         else:
             print("Displaying all tables:")
             tbl.display_table(table)
@@ -56,6 +57,7 @@ def main():
         else:
             print("Argumen yang dimasukkan salah.")
             print("Gunakan -f1 <NO ROW>")
+            sys.exit(1)
     
     elif sys.argv[1] == '-f2':
         if len(sys.argv) == 3:
@@ -76,6 +78,7 @@ def main():
         else:
             print("Argumen yang dimasukkan salah.")
             print("Gunakan -f2 <NO ROW>")
+            sys.exit(1)
 
     elif sys.argv[1] == '-edit':
         if len(sys.argv) == 3:
@@ -98,6 +101,7 @@ def main():
         else:
             print("Argumen yang dimasukkan salah.")
             print("Gunakan -edit <NO ROW>")
+            sys.exit(1)
 
     elif sys.argv[1] == '-f3':
         if len(sys.argv) == 3:
@@ -120,17 +124,15 @@ def main():
         else:
             print("Argumen yang dimasukkan salah.")
             print("Gunakan -f3 <NO ROW>")
+            sys.exit(1)
 
 
     else:
         print("Argumen '{}' tidak diketahui".format(sys.argv[1]))
-
-
-
-
-            
-        
-        
+    
+    print('''
+Program ini dibuat oleh Zumaku
+Semoga Membantu :)''')
 
 if __name__ == "__main__":
     main()
