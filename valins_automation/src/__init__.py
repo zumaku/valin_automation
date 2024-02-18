@@ -12,15 +12,14 @@ print("Inisiasi valins_automation...")
 # === Variable Global ===
 excel_file = '../docs/temp.xlsx'
 greating = '''
-Program ini akan mempermudah untuk melakukan kerjaan akuntan selama magang!
-
-‼️ PROGRAM INI HANYA UNTUK MAHASISWA MAGANG DI TELKOM BALAIKOTA ‼️
-Februari2024
-
----------------------------------------------------------------------------
-
-Perintah yang Tersedia
+            _ _                         _                        _   _             
+__   ____ _| (_)_ __  ___    __ _ _   _| |_ ___  _ __ ___   __ _| |_(_) ___  _ __  
+\ \ / / _` | | | '_ \/ __|  / _` | | | | __/ _ \| '_ ` _ \ / _` | __| |/ _ \| '_ \ 
+ \ V / (_| | | | | | \__ \ | (_| | |_| | || (_) | | | | | | (_| | |_| | (_) | | | |
+  \_/ \__,_|_|_|_| |_|___/  \__,_|\__,_|\__\___/|_| |_| |_|\__,_|\__|_|\___/|_| |_|
+                                                                                   
 '''
+print(greating)
 
 # Ini adalah semua posisi-posisi tombol dan form pada aplikasi Lensa Chetbot
 # => Form Position <=
