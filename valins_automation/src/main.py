@@ -9,7 +9,8 @@ import flow as flw
 table = tbl.read_excel_table(var.excel_file)
 
 def main():
-    if len(sys.argv) == 1:  # No arguments provided
+    print(sys.argv)
+    if len(sys.argv) == 1:
         print(var.desc)
         sys.exit()
     
@@ -95,20 +96,26 @@ def main():
                 sys.exit()
 
     elif sys.argv[1] == '-f3':
-        if len(sys.argv) < 4 and sys.argv[3] != "-qr":
-            print("Masukkan argumen untuk row, contoh -f3 2 -qr <qrcodeya>")
-        else:
+        if len(sys.argv) == 3:
             row = int(sys.argv[2])
             jmlport = tbl.get_data(var.excel_file, "Max Port", row)
             readyport = tbl.get_data(var.excel_file, "Ready Port", row)
-            qrcode = sys.argv[4]
-
+            qrcode = input("Masukkan QR Code: ")
+            
+            # Jika QR Code terlalu pendek
+            if len(qrcode) < 10:
+                print("QR Code Tidak Dapat Diterima.")
+                sys.exit(1)
+            
             print("Jumlah Port: {} | QR CODE: {} | Ready Port: {}".format(jmlport, qrcode, readyport))
             if input("Lanjut? y/n : ") == "y":
                 # Menjalankan flow 3
                 flw.flow_pt3(jmlport, qrcode, readyport)
             else:
                 sys.exit()
+        else:
+            print("Argumen yang dimasukkan salah.")
+
 
     else:
         print("Argumen '{}' tidak diketahui".format(sys.argv[1]))

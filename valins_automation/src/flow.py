@@ -31,7 +31,7 @@ def chngodp(odp):
 
 
 def flow_pt1(node_id, slot, port):
-    print("================ Flow Part 1, Dimulai! ================")
+    print("================ Flow 1, Dimulai! ================")
 
     # Mengirimkan perintah /findontport
     print("-> Mengirim '/findontport'")
@@ -58,12 +58,12 @@ def flow_pt1(node_id, slot, port):
     print("   ✓ Port terkirim")
     time.sleep(4)
 
-    print("================ Flow Part 1, Selesai! ================")
+    print("================ Flow 1, Selesai! ================")
     print("Silahkan Recheck dan bersiap untuk flow kedua")
 
 
 def flow_pt2(odp, jmlport, readyport):
-    print("======= Flow Part 2, Dimulai! =======")
+    print("======= Flow 2, Dimulai! =======")
 
     odc = chngodp(odp)
 
@@ -177,12 +177,12 @@ def flow_pt2(odp, jmlport, readyport):
     time.sleep(4)
 
 
-    print("================ Flow Part 2, Selesai! ================")
+    print("================ Flow 2, Selesai! ================")
     print("Silahkan simpan Valins ID")
 
 
 def flow_pt3(jmlport, qrcode, readyport):
-    print("================ Flow Part 2, Dimulai! ================")
+    print("================ Flow 3, Dimulai! ================")
 
     print("-> Mengklik QR Code Dropcore")
     clickat(var.qrcd_btn_px, var.qrcd_btn_py)
@@ -192,17 +192,17 @@ def flow_pt3(jmlport, qrcode, readyport):
     x = 1
     while x <= jmlport:
         if x == int(readyport):
-            print("-> Mengirim QR Code Dropcore")
+            print("-> Mengirim QR Code Dropcore pada Port {}".format(x))
             typensend(qrcode)
-            print("   ✓ QR Code Dropcore Terkirim")
+            print("   ✓ QR Code Dropcore Terkirim pada Port {}".format(x))
             time.sleep(5)
         else:
-            print("-> Memilih 'Tidak ada Dropcore'")
+            print("-> Memilih 'Tidak ada Dropcore di Port {}'".format(x))
             clickat(var.nnd_btn_px, var.nnd_btn_py)
             time.sleep(5)
-            print("   ✓ 'Tidak ada Dropcore' Terpilih")
+            print("   ✓ 'Tidak ada Dropcore di Port {}' Terpilih".format(x))
         x+=1
 
 
-    print("================ Flow Part 3, Selesai! ================")
+    print("================ Flow 3, Selesai! ================")
     print("Hentikan manual sendiri")
