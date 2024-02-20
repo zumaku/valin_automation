@@ -62,7 +62,7 @@ def flow_pt1(node_id, slot, port):
     print("Silahkan Recheck dan bersiap untuk flow kedua")
 
 
-def flow_pt2(odp, jmlport, readyport):
+def flow_pt2(odp, jmlport, readyport, panel):
     print("======= Flow 2, Dimulai! =======")
 
     odc = chngodp(odp)
@@ -81,9 +81,9 @@ def flow_pt2(odp, jmlport, readyport):
     
     # Memilih Panel
     print("-> Memilih Panel")
-    if int(jmlport) == 8:
+    if int(panel) == 1:
         clickat(var.panel1_btn_px, var.panel1_btn_py)
-    elif int(jmlport) == 16:
+    elif int(panel) == 2:
         clickat(var.panel2_btn_px, var.panel2_btn_py)
     else:
         print("!!! Jumlah Port tidak sesuai !!!")

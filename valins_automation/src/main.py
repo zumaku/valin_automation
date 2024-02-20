@@ -1,5 +1,6 @@
 import pandas as pd
 import sys
+import time
 from datetime import datetime
 
 import __init__ as var
@@ -68,11 +69,12 @@ def main():
             odp = tbl.get_data(var.excel_file, "ODP", row)
             jmlport = tbl.get_data(var.excel_file, "Max Port", row)
             readyport = tbl.get_data(var.excel_file, "Ready Port", row)
+            panel = tbl.get_data(var.excel_file, "Panel", row)
 
             print("ODP: {} | Jumlah Port: {} | Ready Port: {}".format(odp, jmlport, readyport))
             if input("Lanjut? y/n : ") == "y":
                 # Menjalankan flow 1
-                flw.flow_pt2(odp, jmlport, readyport)
+                flw.flow_pt2(odp, jmlport, readyport, panel)
             else:
                 sys.exit()
         else:
@@ -121,6 +123,19 @@ def main():
                 flw.flow_pt3(jmlport, qrcode, readyport)
             else:
                 sys.exit()
+        else:
+            print("Argumen yang dimasukkan salah.")
+            print("Gunakan -f3 <NO ROW>")
+            sys.exit(1)
+
+    elif sys.argv[1] == '-clk':
+        if len(sys.argv) == 3:
+            x = 1
+            while x <= int(sys.argv[2]):
+                print("-> Terklik {}X".format(x))
+                flw.clickat(var.nnd_btn_px, var.nnd_btn_py)
+                time.sleep(5)
+                x += 1
         else:
             print("Argumen yang dimasukkan salah.")
             print("Gunakan -f3 <NO ROW>")
