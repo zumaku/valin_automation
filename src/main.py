@@ -13,7 +13,7 @@ def main():
     # print(sys.argv)
 
     if len(sys.argv) == 1:
-        print(var.desc)
+        var.displayDescription()
         sys.exit()
     
     if sys.argv[1] == '-t':

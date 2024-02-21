@@ -1,43 +1,23 @@
 import pyperclip
+from colorama import init, Fore, Back
+
+# Inisialisasi colorama
+init()
+
 
 # === Inisialisasi paket ===
 print("Inisiasi valins_automation...")
 
 
-
-# === Import modul yang akan digunakan ===
-# Diisi nanti!
+excel_file = '../docs/temp.xlsx'
+print(Fore.RED + "            _ _           " + Fore.WHITE + "              _                        _   _             ")
+print(Fore.RED + "__   ____ _| (_)_ __  ___ " + Fore.WHITE + "   __ _ _   _| |_ ___  _ __ ___   __ _| |_(_) ___  _ __  ")
+print(Fore.RED + "\ \ / / _` | | | '_ \/ __|" + Fore.WHITE + "  / _` | | | | __/ _ \| '_ ` _ \ / _` | __| |/ _ \| '_ \ ")
+print(Fore.RED + " \ V / (_| | | | | | \__ \\" + Fore.WHITE + " | (_| | |_| | || (_) | | | | | | (_| | |_| | (_) | | | |")
+print(Fore.RED + "  \_/ \__,_|_|_|_| |_|___/" + Fore.WHITE + "  \__,_|\__,_|\__\___/|_| |_| |_|\__,_|\__|_|\___/|_| |_|")    
 
 
 # === Variable Global ===
-excel_file = '../docs/temp.xlsx'
-greating = '''
-            _ _                         _                        _   _             
-__   ____ _| (_)_ __  ___    __ _ _   _| |_ ___  _ __ ___   __ _| |_(_) ___  _ __  
-\ \ / / _` | | | '_ \/ __|  / _` | | | | __/ _ \| '_ ` _ \ / _` | __| |/ _ \| '_ \ 
- \ V / (_| | | | | | \__ \ | (_| | |_| | || (_) | | | | | | (_| | |_| | (_) | | | |
-  \_/ \__,_|_|_|_| |_|___/  \__,_|\__,_|\__\___/|_| |_| |_|\__,_|\__|_|\___/|_| |_|                                                                                 
-'''
-desc = '''
-Ini adalah sebuah program yang dapat membantu Mahasiswa PPL/PKL/Magang di Telkom STO Balaikota Makassar yang melakukan validasi Valin menggunakan aplikasi Lensa.
-Program ini akan mengendalikan mouse dan keyboard secara semi otomatis berdasarkan posisi tombol-tombol aplikasi yang berjalan di emulator laptop.
-
-Perintah
--t                              : Untuk menampilkan isi tabel
--t nc                           : Untuk menampilkan isi tabel yang belum tervalidasi
--t ac                           : Untuk menampilkan isi tabel yang telah tervalidasi
--t all                          : Untuk menampilkan semua isi tabel termasuk semua kolom
-
--edit <NO ROW>                  : Untuk mengedit kolom valin id pada  nomer data yang diinputkan
-
--f <NO ROW>                     : Untuk menjalankan flow 1 pada Nomer data yang diinputkan
--f2 <NO ROW>                    : Untuk menjalankan flow 2 pada Nomer data yang diinputkan
--f3 <NO ROW>                    : Untuk menjalankan flow 3 pada Nomer data yang diinputkan
-
-Program ini dibuat oleh Zumaku
-Semoga Membantu :)
-'''
-print(greating)
 
 # Ini adalah semua posisi-posisi tombol dan form pada aplikasi Lensa Chetbot
 # => Form Position <=
@@ -179,13 +159,33 @@ qrcd_btn_py = 893
 nnd_btn_px = 1477
 nnd_btn_py = 983
 
-
 def copy_to_clipboard(text):
     try:
         pyperclip.copy(text)
         return True
     except:
         return False
+    
+def create_hyperlink(text, url):
+    return f"\u001b]8;;{url}\u001b\\{text}\u001b]8;;\u001b\\"
+
+def displayDescription():
+    print("\nIni adalah sebuah program yang dapat membantu Mahasiswa PPL/PKL/Magang di Telkom STO Balaikota Makassar yang melakukan validasi Valin menggunakan aplikasi Lensa.")
+    print("Program ini akan mengendalikan mouse dan keyboard secara semi otomatis berdasarkan posisi tombol-tombol aplikasi yang berjalan di android emulator laptop.")
+
+    print("\nPerintah:")
+    print(Fore.YELLOW + "-t" + Fore.WHITE + "              : Untuk menampilkan isi tabel")
+    print(Fore.YELLOW + "-t nc" + Fore.WHITE + "           : Untuk menampilkan isi tabel yang belum tervalidasi")
+    print(Fore.YELLOW + "-t ac" + Fore.WHITE + "           : Untuk menampilkan isi tabel yang telah tervalidasi")
+    print(Fore.YELLOW + "-t all" + Fore.WHITE + "          : Untuk menampilkan semua isi tabel termasuk semua kolom\n")
+    print(Fore.YELLOW + "-edit <NO ROW>" + Fore.WHITE + "  : Untuk mengedit kolom valin id pada  nomer data yang diinputkan\n")
+    print(Fore.YELLOW + "-f <NO ROW>" + Fore.WHITE + "     : Untuk menjalankan flow 1 pada Nomer data yang diinputkan")
+    print(Fore.YELLOW + "-f2 <NO ROW>" + Fore.WHITE + "    : Untuk menjalankan flow 2 pada Nomer data yang diinputkan")
+    print(Fore.YELLOW + "-f3 <NO ROW>" + Fore.WHITE + "    : Untuk menjalankan flow 3 pada Nomer data yang diinputkan\n")
+    print(Fore.YELLOW + "-clk <NUMBER>" + Fore.WHITE + "    : Untuk mengklik tidak ada qr sebanyak yang diinputkan\n")
+
+    print("Program ini dibuat oleh " + Fore.RED + create_hyperlink("Zumaku", "https://github.com/zumaku"))
+    print(Fore.WHITE + "Semoga Membantu " + Fore.RED + ":)")
 
 
 # Mengekspor simbol-simbol (opsional)
