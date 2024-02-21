@@ -1,0 +1,7 @@
+# Ignore all files in the 'doc' directory
+docs/*
+
+# Except the example.xlsx file
+!docs/temp.xlsx
+
+todo.txt
