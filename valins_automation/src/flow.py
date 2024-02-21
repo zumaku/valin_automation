@@ -105,9 +105,9 @@ def flow_pt2(odp, jmlport, readyport, panel):
     clickat(var.shareloc_btn_px, var.shareloc_btn_py)
     time.sleep(4)
     clickat(var.send_shareloc_btn_px, var.send_shareloc_btn_py)
-    time.sleep(3)
+    time.sleep(2)
     print("   ✓ Lokasi Terkirim")
-    time.sleep(4)
+    time.sleep(3)
 
     # Memilih port yang tersedia
     print("-> Memilih Port yang tersedia")
