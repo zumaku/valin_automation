@@ -1,13 +1,13 @@
 import pandas as pd
-import sys
 from datetime import datetime
+from colorama import Fore
 
 def read_excel_table(file_name):
     try:
         df = pd.read_excel(file_name)
         return df
     except Exception as e:
-        print("Error reading Excel file:", e)
+        print(Fore.RED + "Error reading Excel file:", e)
         return None
 
 def display_table(df, all=False):
@@ -20,8 +20,8 @@ def display_table(df, all=False):
             # Membuat salinan DataFrame yang hanya berisi kolom yang tidak ingin ditampilkan
             df_partial = df.drop(columns=['First Updated', 'Last Updated'])
             print(df_partial.to_string(index=False))  # Print all attributes except 'First Updated' and 'Last Updated'
-        print("Number of rows:", len(df))
-        print("Number of columns:", len(df.columns))
+        print(Fore.YELLOW + "\nNumber of rows: " + Fore.WHITE + str(len(df)))
+        print(Fore.YELLOW + "Number of columns: " + Fore.WHITE + str(len(df.columns)))
 
 def edit_table(df, row, valins_id):
     try:

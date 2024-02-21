@@ -2,6 +2,7 @@ import pandas as pd
 import sys
 import time
 from datetime import datetime
+from colorama import Fore
 
 import __init__ as var
 import table as tbl
@@ -33,7 +34,7 @@ def main():
                 print("Argumen yang dimasukkan salah.")
                 sys.exit(1)
         else:
-            print("Displaying all tables:")
+            print("Displaying all tables:\n")
             tbl.display_table(table)
     
     elif sys.argv[1] == '-f':
@@ -145,9 +146,8 @@ def main():
     else:
         print("Argumen '{}' tidak diketahui".format(sys.argv[1]))
     
-    print('''
-Program ini dibuat oleh Zumaku
-Semoga Membantu :)''')
+    print(Fore.WHITE + "\nProgram ini dibuat oleh " + Fore.RED + var.create_hyperlink("Zumaku", "https://github.com/zumaku"))
+    print(Fore.WHITE + "Semoga Membantu " + Fore.RED + ":)")
 
 if __name__ == "__main__":
     main()

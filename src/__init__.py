@@ -14,7 +14,7 @@ print(Fore.RED + "            _ _           " + Fore.WHITE + "              _   
 print(Fore.RED + "__   ____ _| (_)_ __  ___ " + Fore.WHITE + "   __ _ _   _| |_ ___  _ __ ___   __ _| |_(_) ___  _ __  ")
 print(Fore.RED + "\ \ / / _` | | | '_ \/ __|" + Fore.WHITE + "  / _` | | | | __/ _ \| '_ ` _ \ / _` | __| |/ _ \| '_ \ ")
 print(Fore.RED + " \ V / (_| | | | | | \__ \\" + Fore.WHITE + " | (_| | |_| | || (_) | | | | | | (_| | |_| | (_) | | | |")
-print(Fore.RED + "  \_/ \__,_|_|_|_| |_|___/" + Fore.WHITE + "  \__,_|\__,_|\__\___/|_| |_| |_|\__,_|\__|_|\___/|_| |_|")    
+print(Fore.RED + "  \_/ \__,_|_|_|_| |_|___/" + Fore.WHITE + "  \__,_|\__,_|\__\___/|_| |_| |_|\__,_|\__|_|\___/|_| |_|\n")    
 
 
 # === Variable Global ===
@@ -170,7 +170,7 @@ def create_hyperlink(text, url):
     return f"\u001b]8;;{url}\u001b\\{text}\u001b]8;;\u001b\\"
 
 def displayDescription():
-    print("\nIni adalah sebuah program yang dapat membantu Mahasiswa PPL/PKL/Magang di Telkom STO Balaikota Makassar yang melakukan validasi Valin menggunakan aplikasi Lensa.")
+    print("Ini adalah sebuah program yang dapat membantu Mahasiswa PPL/PKL/Magang di Telkom STO Balaikota Makassar yang melakukan validasi Valin menggunakan aplikasi Lensa.")
     print("Program ini akan mengendalikan mouse dan keyboard secara semi otomatis berdasarkan posisi tombol-tombol aplikasi yang berjalan di android emulator laptop.")
 
     print("\nPerintah:")
@@ -183,9 +183,6 @@ def displayDescription():
     print(Fore.YELLOW + "-f2 <NO ROW>" + Fore.WHITE + "    : Untuk menjalankan flow 2 pada Nomer data yang diinputkan")
     print(Fore.YELLOW + "-f3 <NO ROW>" + Fore.WHITE + "    : Untuk menjalankan flow 3 pada Nomer data yang diinputkan\n")
     print(Fore.YELLOW + "-clk <NUMBER>" + Fore.WHITE + "    : Untuk mengklik tidak ada qr sebanyak yang diinputkan\n")
-
-    print("Program ini dibuat oleh " + Fore.RED + create_hyperlink("Zumaku", "https://github.com/zumaku"))
-    print(Fore.WHITE + "Semoga Membantu " + Fore.RED + ":)")
 
 
 # Mengekspor simbol-simbol (opsional)
