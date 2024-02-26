@@ -12,10 +12,11 @@ Program semi otomatis validasi valin untuk membantu mahasiswa magang di Telkom S
 | Command                            | Deskripsi                                                                                           |
 |------------------------------------|-----------------------------------------------------------------------------------------------------|
 | `-t`                               | Menampilkan isi tabel.                                                                              |
-| `-t ac`                            | Menampilkan data yang telah divalidasi.                                                            |
+| `-t ac`                            | Menampilkan data yang telah divalidasi.                                                             |
 | `-t nc`                            | Menampilkan data yang belum divalidasi.                                                             |
-| `-t all`                           | Menampilkan semua data beserta dengan atribut timestamp.                                             |
-| `-t edit -r <NO-ROW> -val <VALIN-ID>` | Mengisi data Valin ID berdasarkan nomer row yang dimasukkan.                                        |
-| `-f`                               | Menjalankan flow 1 (Findport s.d. Recheck).                                                         |
-| `-f2`                              | Menjalankan flow 2 (ODP s.d. Valins ID).                                                            |
-| `-f3 -qr <QR-CODE>`                | Menjalankan flow 3 (Input QR Code).                                                                 |
+| `-t all`                           | Menampilkan semua data beserta dengan atribut timestamp.                                            |
+| `-edit <NO-ROW>`                   | Mengisi data Valin ID berdasarkan nomer row yang dimasukkan.                                        |
+| `-f <NO-ROW>`                      | Menjalankan flow 1 (Findport s.d. Recheck) untuk nomer row yang dimasukkan.                         |
+| `-f2 <NO-ROW>`                     | Menjalankan flow 2 (ODP s.d. Valins ID) untuk nomer row yang dimasukkan.                            |
+| `-f3 <NO-ROW>`                     | Menjalankan flow 3 (Input QR Code) untuk nomer row yang dimasukkan.                                 |
+| `-clk <JML-CLICK>`                 | Mengklik 'tidak ada qr-code' pada flow 3.                                                           |
